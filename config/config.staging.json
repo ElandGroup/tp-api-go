@@ -1,0 +1,8 @@
+{
+
+    "Sample":{
+         "Conn":"driver={sql server};Server=182.92.65.253;port=1433;Database=SampleDB;user id=fruit;password=Eland123;"
+         //"Conn":"Provider=SQLOLEDB;Data Source=182.92.65.253,1433;Initial Catalog=SampleDB;User ID=fruit;password=Eland123;"
+    }
+
+}

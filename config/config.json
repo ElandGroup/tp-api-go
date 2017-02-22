@@ -1,0 +1,7 @@
+{
+
+    "Sample":{
+         "Conn":"driver={sql server};Server=182.92.65.253;port=1433;Database=SampleDB;user id=fruit;password=Eland123;"
+    }
+
+}
