@@ -1,9 +1,10 @@
 ﻿package main
 
 import (
-	"goApiTemplate/config"
-	"goApiTemplate/dao"
 	"net/http"
+	"tp-api-go/api"
+	"tp-api-go/config"
+	"tp-api-go/dao"
 
 	"github.com/labstack/echo"
 )
@@ -20,5 +21,8 @@ func InitApi(e *echo.Echo) {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello api")
 	})
+
+	v1 := e.Group("/v1")
+	v1.POST("/ExpressOrder", api.CreateExpressOrder)
 
 }

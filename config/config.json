@@ -2,6 +2,13 @@
 
     "Sample":{
          "Conn":"driver={sql server};Server=182.92.65.253;port=1433;Database=SampleDB;user id=fruit;password=Eland123;"
+    },
+    "BaiShi":{
+         "OrderExpressUrl":"http://183.129.172.49/o2o/api/process",
+         "PartnerId":"ELAND_YLO2O",
+         "PartnerKey":"123456",
+         "CustomerCode":"ELAND",
+         "ProjectCode":"ELAND_YLO2O",
+         "ServiceType":"TMS_CREATE_ORDER"
     }
-
 }

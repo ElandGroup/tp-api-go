@@ -3,7 +3,7 @@ package helper
 import (
 	"encoding/json"
 	"fmt"
-	. "goApiTemplate/core"
+	. "tp-api-go/core"
 	"reflect"
 	"strconv"
 

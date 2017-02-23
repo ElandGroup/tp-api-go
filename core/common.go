@@ -4,7 +4,7 @@ type (
 	APIResult struct {
 		Success bool        `json:"success"`
 		Result  interface{} `json:"result"`
-		Error   APIError    `json:"error"`
+		Error   *APIError   `json:"error"`
 	}
 
 	QueryResult struct {
