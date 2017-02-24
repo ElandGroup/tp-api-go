@@ -28,9 +28,10 @@ type BaiShiRequestDto struct {
 	NumberType  string `xml:"type"`
 	Value       string `xml:"value"`
 
-	Sender   BaiShiSenderDto     `xml:"sender"`
-	Receiver BaiShiReceiverDto   `xml:"receiver"`
-	Items    []*BaiShiItemDtoNew `xml:items`
+	Sender      BaiShiSenderDto           `xml:"sender"`
+	Receiver    BaiShiReceiverDto         `xml:"receiver"`
+	Items       []*BaiShiItemDtoNew       `xml:"items"`
+	Additionals []*BaiShiAdditionalDtoNew `xml:"additionals"`
 }
 
 type BaiShiSenderDto struct {
@@ -66,22 +67,35 @@ type BaiShiItemDtoNew struct {
 }
 
 type BaiShiItemDto struct {
-	LineNo       string `lineNo`
-	ItemCode     string `itemCode`
-	ItemName     string `itemName`
-	ItemCount    string `itemCount`
-	PackageCount string `packageCount`
+	XMLName      xml.Name `xml:"item"`
+	LineNo       string   `xml:"lineNo"`
+	ItemCode     string   `xml:"itemCode"`
+	ItemName     string   `xml:"itemName"`
+	ItemCount    string   `xml:"itemCount"`
+	PackageCount string   `xml:"packageCount"`
 
-	PackageUomCode string `packageUomCode`
-	Weight         string `weight`
-	Volume         string `volume`
-	UnitPrice      string `unitPrice`
-	DeclaredValue  string `declaredValue`
+	PackageUomCode string `xml:"packageUomCode"`
+	Weight         string `xml:"weight"`
+	Volume         string `xml:"volume"`
+	UnitPrice      string `xml:"unitPrice"`
+	DeclaredValue  string `xml:"declaredValue"`
 
-	VolumeWeight string `volumeWeight`
-	Remark       string `remark`
+	VolumeWeight string `xml:"volumeWeight"`
+	Remark       string `xml:"remark"`
 }
 
+type BaiShiAdditionalDtoNew struct {
+	Additional BaiShiAdditionalDto `xml:"additional"`
+}
 type BaiShiAdditionalDto struct {
-	addType string ``
+	AddType string `xml:"type"`
+	Value   string `xml:"value"`
+}
+
+type BaiShiResponseDto struct {
+	XMLName          xml.Name `xml:"response"`
+	Result           bool     `xml:"result"`
+	Note             string   `xml:"note"`
+	ErrorCode        string   `xml:"errorCode"`
+	ErrorDescription string   `xml:"errorDescription"`
 }

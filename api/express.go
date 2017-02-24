@@ -1,6 +1,7 @@
 package api
 
 import (
+	"epaygo/core/helper"
 	"tp-api-go/service"
 
 	"net/http"
@@ -11,11 +12,16 @@ import (
 )
 
 func CreateExpressOrder(c echo.Context) error {
-
 	expressInfoDto := new(ExpressInfoDto)
-	if resp, apiError := service.NewExpressOrderService().CreateExpressOrder(expressInfoDto); apiError != nil {
-		return c.JSON(http.StatusInternalServerError, APIResult{Success: true, Error: apiError})
+	if err := c.Bind(expressInfoDto); err != nil {
+		return c.JSON(http.StatusBadRequest, helper.NewApiMessage(10004, err.Error(), "Object"))
 	} else {
-		return c.JSON(http.StatusOK, APIResult{Success: true, Result: resp})
+
+		if _, apiError := service.NewExpressOrderService().CreateExpressOrder(expressInfoDto); apiError != nil {
+			return c.JSON(http.StatusInternalServerError, APIResult{Success: false, Error: apiError})
+		} else {
+			return c.JSON(http.StatusCreated, APIResult{Success: true, Result: nil})
+		}
 	}
+
 }

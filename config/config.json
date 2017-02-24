@@ -9,6 +9,7 @@
          "PartnerKey":"123456",
          "CustomerCode":"ELAND",
          "ProjectCode":"ELAND_YLO2O",
-         "ServiceType":"TMS_CREATE_ORDER"
+         "ServiceType":"TMS_CREATE_ORDER",
+         "TransportMode":"EXP"
     }
 }

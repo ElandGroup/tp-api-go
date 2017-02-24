@@ -13,7 +13,7 @@ func GetMD5Hash(text string) (string, error) {
 	return fmt.Sprintf("%x", hasher.Sum(nil)), nil
 }
 
-func BaiShiSign(test string, key string) (string, error) {
-	test = test + key
-	return GetMD5Hash(test)
+func BaiShiSign(text string, key string) (string, error) {
+	newText := text + key
+	return GetMD5Hash(newText)
 }

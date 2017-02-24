@@ -14,6 +14,7 @@ var Config = struct {
 		CustomerCode    string `json:"CustomerCode"`
 		ProjectCode     string `json:"ProjectCode"`
 		ServiceType     string `json:"ServiceType"`
+		TransportMode   string `json:"TransportMode"`
 	}
 }{}
 

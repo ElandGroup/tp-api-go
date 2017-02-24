@@ -9,6 +9,7 @@ type ExpressInfoDto struct {
 
 	ItemName     string `itemName`
 	MobileNumber string `mobileNumber`
+	Name         string `name`
 	Note         string `note`
 	PhoneNumber  string `phoneNumber`
 	Province     string `province`
@@ -19,11 +20,11 @@ type ExpressInfoDto struct {
 	SenderDistrict    string `senderDistrict`
 	SenderMobile      string `senderMobile`
 
-	SenderName      string `senderName`
-	SenderPhone     string `senderPhone`
-	SenderProvince  string `senderProvince`
+	SenderName     string `senderName`
+	SenderPhone    string `senderPhone`
+	SenderProvince string `senderProvince`
+
 	ShippingAddress string `shippingAddress`
 	ShippingOrderNo string `shippingOrderNo`
-
-	Value string `value`
+	Value           string `value`
 }
